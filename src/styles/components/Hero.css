@@ -1,0 +1,282 @@
+/* Hero Section Styles */
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left Panel - Hero Content (65% width, black background) */
+.hero-content {
+  width: 65%;
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  position: relative;
+  z-index: 2;
+  
+  /* Create diagonal cut using clip-path */
+  clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 0 100%);
+}
+
+/* Right Panel - Navigation (35% width, cyan background) */
+.hero-nav-panel {
+  width: 35%;
+  background: var(--color-cyan);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2rem 3rem;
+  position: relative;
+  z-index: 1;
+  margin-left: -100px; /* Overlap to create seamless diagonal */
+}
+
+/* Hero Text Content */
+.hero-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+/* Greeting Text - "Hi, I am" */
+.hero-greeting {
+  font-size: var(--text-greeting);
+  font-weight: var(--weight-medium);
+  color: var(--color-cyan);
+  margin-bottom: var(--element-spacing);
+  
+  /* Entry animation */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease-out 0.2s forwards;
+}
+
+/* Name - "Sreekar Gudipati" */
+.hero-name {
+  font-size: var(--text-name);
+  font-weight: var(--weight-bold);
+  color: var(--color-cyan);
+  margin-bottom: var(--element-spacing);
+  line-height: 1.1;
+  
+  /* Entry animation */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease-out 0.4s forwards;
+}
+
+/* Title - "Software Engineer" */
+.hero-title {
+  font-size: var(--text-title);
+  font-weight: var(--weight-semibold);
+  color: var(--color-grey-muted);
+  margin-bottom: 1rem;
+  letter-spacing: 0.3px;
+  
+  /* Entry animation */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+/* Social Icons Container */
+.hero-social {
+  display: flex;
+  gap: var(--icon-spacing);
+  align-items: center;
+  
+  /* Entry animation */
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease-out 0.8s forwards;
+}
+
+/* Individual Social Icons */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-cyan);
+  text-decoration: none;
+  font-weight: var(--weight-bold);
+  font-size: 16px;
+  transition: var(--transition-hover);
+  border-radius: 4px;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  color: var(--color-cyan-hover);
+}
+
+/* Navigation Styles */
+.hero-nav {
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--nav-spacing);
+}
+
+.nav-item {
+  /* Entry animation for nav items */
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideInDown 0.6s ease-out forwards;
+}
+
+.nav-item:nth-child(1) { animation-delay: 0.3s; }
+.nav-item:nth-child(2) { animation-delay: 0.4s; }
+.nav-item:nth-child(3) { animation-delay: 0.5s; }
+.nav-item:nth-child(4) { animation-delay: 0.6s; }
+
+/* Navigation Links */
+.nav-link {
+  font-size: var(--text-nav);
+  font-weight: var(--weight-semibold);
+  color: var(--color-black);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-white);
+  transform: translateX(-5px);
+}
+
+/* Contact Button */
+.contact-btn {
+  font-size: var(--text-nav);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background: var(--color-black);
+  color: var(--color-white);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+}
+
+.contact-btn:hover {
+  background: var(--color-cyan-hover);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 216, 255, 0.3);
+}
+
+/* Large "IT" Watermark */
+.hero-watermark {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  font-size: 300px;
+  font-weight: var(--weight-bold);
+  color: var(--color-cyan);
+  opacity: 0.1;
+  line-height: 1;
+  pointer-events: none;
+  transform: rotate(-15deg);
+  z-index: 0;
+  font-family: var(--font-family);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    width: 70%;
+    clip-path: polygon(0 0, calc(100% - 80px) 0, 100% 100%, 0 100%);
+  }
+  
+  .hero-nav-panel {
+    width: 30%;
+    margin-left: -80px;
+    padding: 2rem 2rem;
+  }
+  
+  .hero-watermark {
+    font-size: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .hero-content {
+    width: 100%;
+    clip-path: none;
+    padding: 3rem var(--section-padding-mobile);
+    min-height: 70vh;
+  }
+  
+  .hero-nav-panel {
+    width: 100%;
+    margin-left: 0;
+    padding: 2rem var(--section-padding-mobile);
+    min-height: 30vh;
+  }
+  
+  .nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .hero-text {
+    text-align: center;
+  }
+  
+  .hero-social {
+    justify-content: center;
+  }
+  
+  .hero-watermark {
+    font-size: 200px;
+    bottom: -30px;
+    right: -30px;
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-watermark {
+    font-size: 150px;
+    bottom: -20px;
+    right: -20px;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

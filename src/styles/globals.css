@@ -1,0 +1,117 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties (Design System Variables) */
+:root {
+  /* Colors from design specs */
+  --color-black: #000000;
+  --color-cyan: #00D8FF;
+  --color-cyan-hover: #38E3FF;
+  --color-grey-muted: #B0B0B0;
+  --color-grey-light: #D1D5DB;
+  --color-white: #FFFFFF;
+  
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  
+  /* Font Sizes (from design specs) */
+  --text-greeting: 1.25rem;    /* Hi, I am */
+  --text-name: 2.5rem;         /* Sreekar Gudipati */
+  --text-title: 1rem;          /* Software Engineer */
+  --text-body: 0.95rem;        /* Paragraph text */
+  --text-nav: 0.85rem;         /* Navigation */
+  
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  
+  /* Spacing (from design specs) */
+  --section-padding-y: 5rem 4rem;
+  --section-padding-x: 3rem;
+  --section-padding-mobile: 1.5rem;
+  --element-spacing: 0.5rem;
+  --icon-spacing: 1.25rem;
+  --nav-spacing: 2rem;
+  
+  /* Transitions */
+  --transition-smooth: all 0.2s ease;
+  --transition-hover: all 0.3s ease;
+}
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--color-white);
+  background: var(--color-black);
+  overflow-x: hidden;
+}
+
+/* App container */
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Section base styles */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Utility classes for consistent spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* Responsive container padding */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--section-padding-mobile);
+  }
+  
+  :root {
+    /* Smaller text sizes for mobile */
+    --text-greeting: 1rem;
+    --text-name: 2rem;
+    --text-title: 0.9rem;
+    --section-padding-x: var(--section-padding-mobile);
+  }
+}
+
+/* Button base styles */
+.btn {
+  font-family: var(--font-family);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Accessibility improvements */
+a, button {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-cyan);
+}
