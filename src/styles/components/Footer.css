@@ -1,0 +1,99 @@
+/* Footer Styles - Black Footer with Contact */
+
+.footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--space-2xl) 0;
+  margin-top: auto;
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2xl);
+}
+
+.footer-left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.footer-message {
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.copy-email-btn {
+  font-size: var(--text-small);
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+  background: transparent;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.copy-email-btn:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.footer-right {
+  display: flex;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-2xl);
+}
+
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.link-title {
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  color: var(--color-gray-muted);
+  margin-bottom: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-link {
+  font-size: var(--text-small);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  padding: 2px 0;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-xl);
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    gap: var(--space-xl);
+  }
+}

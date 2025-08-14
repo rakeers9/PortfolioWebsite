@@ -1,35 +1,36 @@
-// src/App.jsx
-
 import React from 'react'
-import Hero from './components/sections/Hero'
-import About from './components/sections/About'
-import Projects from './components/sections/Projects'
-import Contact from './components/sections/Contact'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
+import Landing from './pages/Landing'
+import Projects from './pages/Projects'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Extra from './pages/Extra'
 import './styles/globals.css'
 
 function App() {
   return (
-    <div className="app">
-      {/* Hero Section - Full viewport height */}
-      <section id="hero" className="section">
-        <Hero />
-      </section>
-
-      {/* About Me Section */}
-      <section id="about" className="section">
-        <About />
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="section">
-        <Projects />
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="section">
-        <Contact />
-      </section>
-    </div>
+    <Router>
+      <div className="app">
+        {/* Global Navigation Header */}
+        <Header />
+        
+        {/* Main Content Area */}
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/extra" element={<Extra />} />
+          </Routes>
+        </main>
+        
+        {/* Global Footer */}
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

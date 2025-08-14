@@ -1,25 +1,29 @@
-/* Import Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Import modern geometric sans-serif fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;600;700&display=swap');
 
-/* CSS Custom Properties (Design System Variables) */
+/* CSS Custom Properties - Clean Design System */
 :root {
-  /* Colors from design specs */
-  --color-black: #000000;
-  --color-cyan: #00D8FF;
-  --color-cyan-hover: #38E3FF;
-  --color-grey-muted: #B0B0B0;
-  --color-grey-light: #D1D5DB;
+  /* Colors - Minimal Palette */
   --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-light: #D1D1D1;
+  --color-gray-medium: #B2B2B2;
+  --color-gray-dark: #888888;
+  --color-gray-muted: #8D8D8D;
+  --color-card-bg: #F8F8F8;
+  --color-accent-blue: #0047FF;
   
   /* Typography */
-  --font-family: 'Poppins', sans-serif;
+  --font-primary: 'Inter', 'Satoshi', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   
-  /* Font Sizes (from design specs) */
-  --text-greeting: 1.25rem;    /* Hi, I am */
-  --text-name: 2.5rem;         /* Sreekar Gudipati */
-  --text-title: 1rem;          /* Software Engineer */
-  --text-body: 0.95rem;        /* Paragraph text */
-  --text-nav: 0.85rem;         /* Navigation */
+  /* Font Sizes - Responsive Scale */
+  --text-hero: 4.5rem;        /* 72px - Large display hero */
+  --text-section: 1.75rem;    /* 28px - Section headings */
+  --text-project-title: 1.25rem; /* 20px - Project titles */
+  --text-body: 1.125rem;      /* 18px - Body text */
+  --text-small: 0.875rem;     /* 14px - Small text */
+  --text-tiny: 0.75rem;       /* 12px - Tags, labels */
   
   /* Font Weights */
   --weight-regular: 400;
@@ -27,20 +31,36 @@
   --weight-semibold: 600;
   --weight-bold: 700;
   
-  /* Spacing (from design specs) */
-  --section-padding-y: 5rem 4rem;
-  --section-padding-x: 3rem;
-  --section-padding-mobile: 1.5rem;
-  --element-spacing: 0.5rem;
-  --icon-spacing: 1.25rem;
-  --nav-spacing: 2rem;
+  /* Spacing System */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 80px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  
+  /* Layout Constraints */
+  --max-width: 1200px;
+  --content-padding: var(--space-lg);
+  --content-padding-mobile: var(--space-md);
   
   /* Transitions */
-  --transition-smooth: all 0.2s ease;
-  --transition-hover: all 0.3s ease;
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Shadows and Effects */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 32px;
 }
 
-/* CSS Reset and Base Styles */
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -52,66 +72,161 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: var(--color-white);
-  background: var(--color-black);
-  overflow-x: hidden;
+  color: var(--color-black);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* App container */
+/* App Layout */
 .app {
-  width: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Section base styles */
-.section {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
+.main-content {
+  flex: 1;
 }
 
-/* Utility classes for consistent spacing */
+/* Container for consistent max-width and centering */
 .container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--section-padding-x);
+  padding: 0 var(--content-padding);
 }
 
-/* Responsive container padding */
+/* Typography Utilities */
+.text-hero {
+  font-size: var(--text-hero);
+  font-weight: var(--weight-regular);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-section {
+  font-size: var(--text-section);
+  font-weight: var(--weight-semibold);
+}
+
+.text-muted {
+  color: var(--color-gray-light);
+}
+
+.text-small {
+  font-size: var(--text-small);
+}
+
+/* Button Base Styles */
+.btn {
+  font-family: var(--font-primary);
+  font-size: var(--text-small);
+  font-weight: var(--weight-medium);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Card Styles */
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 var(--section-padding-mobile);
+  :root {
+    /* Smaller font sizes for mobile */
+    --text-hero: 2.5rem;        /* 40px */
+    --text-section: 1.5rem;     /* 24px */
+    --content-padding: var(--content-padding-mobile);
   }
   
-  :root {
-    /* Smaller text sizes for mobile */
-    --text-greeting: 1rem;
-    --text-name: 2rem;
-    --text-title: 0.9rem;
-    --section-padding-x: var(--section-padding-mobile);
+  .container {
+    padding: 0 var(--content-padding-mobile);
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-hero {
+    line-height: 1.3;
   }
 }
 
-/* Button base styles */
-.btn {
-  font-family: var(--font-family);
-  font-weight: var(--weight-bold);
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  text-decoration: none;
-  display: inline-block;
+@media (max-width: 480px) {
+  :root {
+    --text-hero: 2rem;          /* 32px */
+    --content-padding: var(--space-sm);
+  }
 }
 
-/* Accessibility improvements */
-a, button {
-  outline: 2px solid transparent;
+/* Accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
   outline-offset: 2px;
 }
 
-a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--color-cyan);
+/* Remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth transitions for interactive elements */
+a, button, .card {
+  transition: var(--transition-normal);
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+  }
 }
