@@ -6,7 +6,6 @@ import Landing from './pages/Landing'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Extra from './pages/Extra'
 import './styles/globals.css'
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/extra" element={<Extra />} />
           </Routes>
         </main>
         
