@@ -8,8 +8,7 @@ const Header = () => {
   const navItems = [
     { name: 'Projects', path: '/projects' },
     { name: 'About', path: '/about' },
-    { name: 'Extra', path: '/extra' },
-    { name: 'Resume', path: '/resume', external: true, icon: '→' }
+    { name: 'Contact Me', path: '/contact' }
   ]
 
   return (
@@ -26,24 +25,12 @@ const Header = () => {
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.path}>
-                {item.external ? (
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="nav-link external-link"
-                  >
-                    {item.name}
-                    {item.icon && <span className="nav-icon">{item.icon}</span>}
-                  </a>
-                ) : (
-                  <Link 
-                    to={item.path}
-                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                  >
-                    {item.name}
-                  </Link>
-                )}
+                <Link 
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
