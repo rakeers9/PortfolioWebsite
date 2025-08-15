@@ -2,6 +2,28 @@ import React from 'react'
 import '../styles/components/Landing.css'
 
 const Landing = () => {
+  // Social links data
+  const socialLinks = [
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/sreekargudipati',
+      icon: '💼',
+      display: 'LinkedIn'
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/rakeers9',
+      icon: '⚡',
+      display: 'GitHub'
+    },
+    {
+      name: 'Email',
+      url: 'mailto:gudipati@purdue.edu',
+      icon: '📧',
+      display: 'Email'
+    }
+  ]
+
   // Project data with placeholders
   const projects = [
     {
@@ -57,15 +79,6 @@ const Landing = () => {
       image: "https://via.placeholder.com/500x300/F8F8F8/CCCCCC?text=Java+Store+Calendar",
       githubUrl: "https://github.com/rakeers9",
       demoUrl: "https://github.com/rakeers9"
-    },
-    {
-      id: 7,
-      name: "Simple C Compiler",
-      techStack: ["C", "Flex", "Bison", "Assembly"],
-      description: "A basic compiler implementation that translates C-like source code into assembly language with lexical and syntax analysis.",
-      image: "https://via.placeholder.com/500x300/F8F8F8/CCCCCC?text=C+Compiler",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9"
     }
   ]
 
@@ -85,6 +98,35 @@ const Landing = () => {
               <span className="text-muted">into </span>
               <span className="text-emphasis">digital solutions</span>
             </h1>
+            
+            {/* Social Links */}
+            <div className="hero-social">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target={link.name !== 'Email' ? '_blank' : undefined}
+                  rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
+                  className="social-link"
+                >
+                  <span className="social-icon">{link.icon}</span>
+                  <span className="social-text">{link.display}</span>
+                </a>
+              ))}
+            </div>
+            
+            {/* Resume Link */}
+            <div className="resume-section">
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="resume-link"
+              >
+                <span className="resume-icon">📄</span>
+                View Resume
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -95,8 +137,12 @@ const Landing = () => {
           <h2 className="section-heading">Selected Projects</h2>
           
           <div className="projects-grid">
-            {projects.slice(0, 6).map((project) => (
-              <div key={project.id} className="project-card">
+            {projects.slice(0, 6).map((project, index) => (
+              <div 
+                key={project.id} 
+                className="project-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="project-image">
                   <img 
                     src={project.image} 
