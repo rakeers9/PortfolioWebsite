@@ -4,7 +4,7 @@ import '../../styles/components/Footer.css'
 
 const Footer = () => {
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('hello@designer.com')
+    navigator.clipboard.writeText('gudipati@purdue.edu')
     // You could add a toast notification here
     alert('Email copied to clipboard!')
   }
@@ -31,7 +31,7 @@ const Footer = () => {
                 <h4 className="link-title">Explore</h4>
                 <Link to="/projects" className="footer-link">Projects</Link>
                 <Link to="/about" className="footer-link">About</Link>
-                <a href="#extra" className="footer-link">Extra</a>
+                <Link to="/contact" className="footer-link">Contact</Link>
               </div>
               
               <div className="link-group">
