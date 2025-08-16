@@ -2,17 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;600;700&display=swap');
 
-/* CSS Custom Properties - Clean Design System */
+/* CSS Custom Properties - Dark Theme Design System */
 :root {
-  /* Colors - Minimal Palette */
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-gray-light: #D1D1D1;
-  --color-gray-medium: #B2B2B2;
-  --color-gray-dark: #888888;
-  --color-gray-muted: #8D8D8D;
-  --color-card-bg: #F8F8F8;
-  --color-accent-blue: #0047FF;
+  /* Dark Theme Colors */
+  --color-primary-bg: #0E0E0E;        /* Very dark gray/near-black background */
+  --color-secondary-bg: #121212;       /* Slightly lighter dark background */
+  --color-card-bg: #1A1A1A;           /* Card/component backgrounds */
+  --color-accent-green: #00FF7F;       /* Bright neon green accent */
+  --color-accent-green-hover: #00E676; /* Slightly dimmer green for hover */
+  --color-accent-green-glow: #00FF7F40; /* Green with transparency for glows */
+  
+  /* Text Colors */
+  --color-text-primary: #F5F5F5;       /* Off-white for headings/important text */
+  --color-text-secondary: #B0B0B0;     /* Light gray for body text */
+  --color-text-muted: #808080;         /* More muted gray for labels */
+  
+  /* UI Colors */
+  --color-border: #2A2A2A;             /* Muted medium gray for borders */
+  --color-border-hover: #303030;       /* Slightly lighter for hover states */
+  --color-input-bg: #1F1F1F;          /* Input field backgrounds */
+  
+  /* Legacy color mappings for compatibility */
+  --color-white: var(--color-secondary-bg);
+  --color-black: var(--color-text-primary);
+  --color-gray-light: var(--color-text-secondary);
+  --color-gray-medium: var(--color-text-muted);
+  --color-gray-dark: var(--color-text-secondary);
+  --color-gray-muted: var(--color-text-muted);
+  --color-accent-blue: var(--color-accent-green);
+  --color-cyan-hover: var(--color-accent-green-hover);
   
   /* Typography */
   --font-primary: 'Inter', 'Satoshi', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -53,8 +71,9 @@
   --transition-slow: 500ms ease;
   
   /* Shadows and Effects */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 255, 127, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 255, 127, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 255, 127, 0.3);
   --border-radius: 12px;
   --border-radius-sm: 8px;
   --border-radius-lg: 32px;
@@ -76,8 +95,8 @@ body {
   font-size: var(--text-body);
   font-weight: var(--weight-regular);
   line-height: 1.6;
-  color: var(--color-black);
-  background: var(--color-white);
+  color: var(--color-text-primary);
+  background: var(--color-primary-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -152,7 +171,7 @@ html {
 }
 
 .text-muted {
-  color: var(--color-gray-light);
+  color: var(--color-text-muted);
 }
 
 .text-small {
@@ -173,17 +192,25 @@ html {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
+  background: var(--color-accent-green);
+  color: var(--color-primary-bg);
+}
+
+.btn:hover {
+  background: var(--color-accent-green-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-white);
-  border: 1px solid var(--color-white);
+  color: var(--color-accent-green);
+  border: 1px solid var(--color-accent-green);
 }
 
 .btn-outline:hover {
-  background: var(--color-white);
-  color: var(--color-black);
+  background: var(--color-accent-green);
+  color: var(--color-primary-bg);
 }
 
 /* Card Styles */
@@ -192,11 +219,13 @@ html {
   border-radius: var(--border-radius);
   padding: var(--space-md);
   transition: var(--transition-normal);
+  border: 1px solid var(--color-border);
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--color-border-hover);
 }
 
 /* Grid Utilities */

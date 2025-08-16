@@ -17,8 +17,8 @@ const Header = () => {
         <nav className="nav">
           {/* Logo/Home Link */}
           <Link to="/" className="logo">
-            <div className="logo-icon">P</div>
-            <span className="logo-text">Prayag Kalianda</span>
+            <div className="logo-icon">S</div>
+            <span className="logo-text">Sreekar Gudipati</span>
           </Link>
           
           {/* Navigation Links */}

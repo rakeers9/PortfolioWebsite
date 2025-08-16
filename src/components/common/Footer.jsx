@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Left side - Contact */}
           <div className="footer-left">
             <p className="footer-message">
-              Currently designing advanced AI systems @TextLayer
+              Currently building AI systems at Purdue University
             </p>
             <button className="copy-email-btn btn btn-outline" onClick={handleCopyEmail}>
               <span className="icon">📋</span>

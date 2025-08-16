@@ -1,7 +1,7 @@
-/* About Page Styles - Clean Two-Column Layouts */
+/* About Page Styles - Dark Theme Two-Column Layouts */
 
 .about {
-  background: var(--color-white);
+  background: var(--color-primary-bg);
   padding-top: var(--space-2xl);
 }
 
@@ -54,13 +54,13 @@
 .about-heading {
   font-size: 2.25rem; /* 36px */
   font-weight: var(--weight-semibold);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
   line-height: 1.2;
 }
 
 .pixel-figure {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
   font-size: 0.9em;
   margin-left: 0.2em;
 }
@@ -74,18 +74,19 @@
 .about-paragraphs p {
   font-size: 1rem; /* 16-18px */
   line-height: 1.6;
-  color: #2C2C2C;
+  color: var(--color-text-secondary);
   max-width: 600px;
 }
 
 .success-link {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
   text-decoration: none;
   transition: var(--transition-fast);
 }
 
 .success-link:hover {
   text-decoration: underline;
+  color: var(--color-accent-green-hover);
 }
 
 /* Work Experience Section */
@@ -109,14 +110,14 @@
 .section-title {
   font-size: 1.5rem; /* 20-24px */
   font-weight: var(--weight-semibold);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   display: flex;
   align-items: center;
   gap: var(--space-sm);
 }
 
 .section-icon {
-  color: var(--color-accent-blue);
+  color: var(--color-accent-green);
   font-size: 1.5rem;
 }
 
@@ -147,20 +148,20 @@
   justify-content: center;
   font-weight: var(--weight-bold);
   font-size: 1.25rem;
-  color: var(--color-white);
+  color: var(--color-primary-bg);
   border-radius: var(--border-radius-sm);
 }
 
 .black-logo {
-  background: var(--color-black);
+  background: var(--color-text-primary);
 }
 
 .blue-logo {
-  background: var(--color-accent-blue);
+  background: var(--color-accent-green);
 }
 
 .gray-logo {
-  background: var(--color-gray-dark);
+  background: var(--color-text-secondary);
 }
 
 /* Job Details */
@@ -171,13 +172,13 @@
 .company-name {
   font-size: 1.125rem; /* 18px */
   font-weight: var(--weight-semibold);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-xs);
 }
 
 .job-duration {
   font-size: var(--text-small); /* 14px */
-  color: var(--color-gray-dark);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-sm);
   font-weight: var(--weight-medium);
 }
@@ -185,7 +186,7 @@
 .job-description {
   font-size: var(--text-small); /* 15-16px */
   line-height: 1.6;
-  color: #555555;
+  color: var(--color-text-secondary);
   max-width: 600px;
   margin-bottom: var(--space-sm);
 }
@@ -200,9 +201,9 @@
 
 .client-logo {
   font-size: var(--text-small);
-  color: var(--color-gray-dark);
+  color: var(--color-text-secondary);
   padding: var(--space-xs) var(--space-sm);
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--color-border);
   border-radius: var(--border-radius-sm);
   font-weight: var(--weight-medium);
 }
@@ -210,7 +211,7 @@
 /* Education Section */
 .education {
   padding: var(--space-3xl) 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--color-border);
 }
 
 .education-content {
@@ -247,19 +248,26 @@
 .degree-name {
   font-size: 1rem;
   font-weight: var(--weight-semibold);
-  color: var(--color-black);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.education-details {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  font-style: italic;
   margin-bottom: var(--space-xs);
 }
 
 .institution-name {
   font-size: var(--text-small);
-  color: var(--color-gray-dark);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-xs);
 }
 
 .education-dates {
   font-size: var(--text-small);
-  color: var(--color-gray-medium);
+  color: var(--color-text-muted);
   font-weight: var(--weight-medium);
 }
 
@@ -401,6 +409,9 @@
 .job-entry:nth-child(1) { animation-delay: 0.7s; animation-fill-mode: forwards; }
 .job-entry:nth-child(2) { animation-delay: 0.85s; animation-fill-mode: forwards; }
 .job-entry:nth-child(3) { animation-delay: 1s; animation-fill-mode: forwards; }
+.job-entry:nth-child(4) { animation-delay: 1.15s; animation-fill-mode: forwards; }
+.job-entry:nth-child(5) { animation-delay: 1.3s; animation-fill-mode: forwards; }
+.job-entry:nth-child(6) { animation-delay: 1.45s; animation-fill-mode: forwards; }
 
 .education-entry:nth-child(1) { animation-delay: 0.3s; animation-fill-mode: forwards; }
 .education-entry:nth-child(2) { animation-delay: 0.45s; animation-fill-mode: forwards; }

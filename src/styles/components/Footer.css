@@ -3,9 +3,9 @@
 .footer {
   background: var(--color-black);
   color: var(--color-white);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-2xl) 0; /* 64px top and bottom */
   margin-top: auto;
-  border-top-left-radius: var(--border-radius-lg);
+  border-top-left-radius: var(--border-radius-lg); /* 32px rounded corners */
   border-top-right-radius: var(--border-radius-lg);
 }
 
@@ -16,21 +16,23 @@
   gap: var(--space-2xl);
 }
 
+/* Left side - Contact message and button */
 .footer-left {
   flex: 1;
   max-width: 400px;
 }
 
 .footer-message {
-  font-size: var(--text-body);
+  font-size: var(--text-body); /* 18-20px */
   font-weight: var(--weight-regular);
   color: var(--color-white);
   margin-bottom: var(--space-md);
   line-height: 1.5;
 }
 
+/* Copy Email Button */
 .copy-email-btn {
-  font-size: var(--text-small);
+  font-size: var(--text-small); /* 14-16px */
   color: var(--color-white);
   border: 1px solid var(--color-white);
   background: transparent;
@@ -48,6 +50,11 @@
   color: var(--color-black);
 }
 
+.copy-email-btn .icon {
+  font-size: 14px;
+}
+
+/* Right side - Links */
 .footer-right {
   display: flex;
 }
@@ -66,7 +73,7 @@
 .link-title {
   font-size: var(--text-small);
   font-weight: var(--weight-semibold);
-  color: var(--color-gray-muted);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-xs);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -74,17 +81,18 @@
 
 .footer-link {
   font-size: var(--text-small);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: var(--transition-fast);
   padding: 2px 0;
 }
 
 .footer-link:hover {
-  opacity: 0.7;
+  color: var(--color-accent-green);
   text-decoration: underline;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -92,8 +100,34 @@
     text-align: center;
   }
   
+  .footer-left {
+    max-width: none;
+  }
+  
   .footer-links {
     justify-content: center;
     gap: var(--space-xl);
+  }
+  
+  .footer {
+    padding: var(--space-xl) 0;
+    border-radius: 0; /* Remove rounded corners on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+  
+  .link-group {
+    text-align: center;
+    gap: var(--space-xs);
+  }
+  
+  .footer-content {
+    gap: var(--space-lg);
   }
 }
