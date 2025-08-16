@@ -55,7 +55,7 @@
 .hero-social {
   display: flex;
   gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
   flex-wrap: wrap;
   
   /* Entry animation */
@@ -97,62 +97,6 @@
 
 .social-text {
   font-size: var(--text-small);
-}
-
-/* Resume Section */
-.resume-section {
-  margin-bottom: var(--space-xl);
-  
-  /* Entry animation */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: resumeFadeInUp 0.8s ease-out 1s forwards;
-}
-
-.resume-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-xs);
-  text-decoration: none;
-  color: var(--color-white);
-  background: var(--color-black);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--border-radius-sm);
-  font-weight: var(--weight-semibold);
-  font-size: var(--text-small);
-  transition: var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.resume-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.resume-link:hover::before {
-  left: 100%;
-}
-
-.resume-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  background: var(--color-accent-blue);
-}
-
-.resume-icon {
-  font-size: 1rem;
-  transition: var(--transition-normal);
-}
-
-.resume-link:hover .resume-icon {
-  transform: scale(1.1) rotate(5deg);
 }
 
 /* Selected Work Section */
@@ -204,11 +148,6 @@
   transition: var(--transition-normal);
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  
-  /* Staggered entry animation */
-  opacity: 0;
-  transform: translateY(40px);
-  animation: projectCardFadeInUp 0.8s ease-out forwards;
 }
 
 .project-card:hover {
@@ -381,13 +320,6 @@
   }
 }
 
-@keyframes resumeFadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes sectionHeadingSlideIn {
   to {
     opacity: 1;
@@ -398,13 +330,6 @@
 @keyframes underlineExpand {
   to {
     transform: scaleX(1);
-  }
-}
-
-@keyframes projectCardFadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -510,7 +435,6 @@
 }
 
 .social-link:focus-visible,
-.resume-link:focus-visible,
 .project-link:focus-visible {
   outline: 2px solid var(--color-accent-blue);
   outline-offset: 2px;
@@ -528,8 +452,7 @@
   }
   
   .project-links,
-  .hero-social,
-  .resume-section {
+  .hero-social {
     display: none;
   }
 }

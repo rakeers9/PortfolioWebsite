@@ -96,46 +96,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Additional Info Section */}
-      <section className="contact-info">
-        <div className="container">
-          <div className="info-content">
-            <div className="info-text">
-              <h2 className="info-title">Let's Build Something Great</h2>
-              <p className="info-description">
-                Whether you have a project in mind, want to discuss potential opportunities, 
-                or just want to connect, I'd love to hear from you. I'm particularly interested in:
-              </p>
-              <ul className="interests-list">
-                <li>Full-stack web development projects</li>
-                <li>Machine learning and AI applications</li>
-                <li>Mobile app development</li>
-                <li>Open source collaborations</li>
-                <li>Innovative tech solutions</li>
-              </ul>
-            </div>
-            
-            <div className="response-time">
-              <div className="response-card">
-                <div className="response-icon">⚡</div>
-                <div className="response-content">
-                  <h3>Quick Response</h3>
-                  <p>I typically respond to emails within 24 hours</p>
-                </div>
-              </div>
-              
-              <div className="availability-card">
-                <div className="availability-icon">🌍</div>
-                <div className="availability-content">
-                  <h3>Location</h3>
-                  <p>Based in Indiana, USA (EST timezone)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="contact-cta">
         <div className="container">

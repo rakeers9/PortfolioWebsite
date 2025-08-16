@@ -114,19 +114,6 @@ const Landing = () => {
                 </a>
               ))}
             </div>
-            
-            {/* Resume Link */}
-            <div className="resume-section">
-              <a 
-                href="/resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="resume-link"
-              >
-                <span className="resume-icon">📄</span>
-                View Resume
-              </a>
-            </div>
           </div>
         </div>
       </section>
@@ -137,12 +124,8 @@ const Landing = () => {
           <h2 className="section-heading">Selected Projects</h2>
           
           <div className="projects-grid">
-            {projects.slice(0, 6).map((project, index) => (
-              <div 
-                key={project.id} 
-                className="project-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {projects.slice(0, 6).map((project) => (
+              <div key={project.id} className="project-card">
                 <div className="project-image">
                   <img 
                     src={project.image} 
