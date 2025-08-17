@@ -172,7 +172,7 @@ const About = () => {
                   <div className="logo-placeholder blue-logo">PFS</div>
                 </div>
                 <div className="job-details">
-                  <h3 className="company-name">Purdue Fusion Studio for Entertainment</h3>
+                  <h3 className="company-name">Undergraduate Research - Purdue Fusion Studio for Entertainment</h3>
                   <p className="job-duration">Jan 2025 – Present</p>
                   <p className="job-description">
                     Collaborated with faculty to automate live theatre prop delivery using robotics + AI. 

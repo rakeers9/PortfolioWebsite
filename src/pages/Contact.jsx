@@ -100,9 +100,9 @@ const Contact = () => {
       <section className="contact-cta">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">Ready to Start a Conversation?</h2>
+            <h2 className="cta-title">Want to Reach Out?</h2>
             <p className="cta-description">
-              Drop me a line and let's discuss how we can work together to bring your ideas to life.
+              Drop me an email!
             </p>
             <button 
               onClick={handleEmailCopy}
