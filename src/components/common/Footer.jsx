@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Left side - Contact */}
           <div className="footer-left">
             <p className="footer-message">
-              Currently building AI systems at Purdue University
+              Currently building at Purdue University
             </p>
             <button className="copy-email-btn btn btn-outline" onClick={handleCopyEmail}>
               <span className="icon">📋</span>

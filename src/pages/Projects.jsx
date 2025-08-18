@@ -9,7 +9,7 @@ const Projects = () => {
       name: "FL Fitness App",
       techStack: ["React Native", "TypeScript", "Expo", "Supabase"],
       description: "A full-stack fitness platform with live coach–client data sync, AI-powered workout generation, and mobile-first design. Users can track workouts, sync with coaches in real-time, and receive AI-generated fitness plans.",
-      image: "https://via.placeholder.com/500x300/F8F8F8/CCCCCC?text=FL+Fitness+App",
+      image: "/Users/sreekargudipati/Coding Projects/PortfolioWebsite/public/images/projects/FitnessApp.jpg",
       githubUrl: "https://github.com/rakeers9",
       demoUrl: "https://github.com/rakeers9",
       featured: true
