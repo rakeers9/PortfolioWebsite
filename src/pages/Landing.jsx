@@ -33,7 +33,7 @@ const Landing = () => {
       description: "A full-stack fitness platform with live coach–client data sync, AI-powered workout generation, and mobile-first design. Users can track workouts, sync with coaches in real-time, and receive AI-generated fitness plans.",
       image: "public/images/projects/FitnessApp.png",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      demoUrl: "public/videos/demos/FitnessApp.mov",
       featured: true
     },
     {
@@ -53,7 +53,7 @@ const Landing = () => {
       description: "Computer vision system that detects players, tracks ball movement, and analyzes possession stats from football game clips. Uses advanced object detection and tracking algorithms for sports analytics.",
       image: "public/images/projects/FootballAnalyzer.png",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      demoUrl: "public/videos/demos/FootballAnalyzer.mov",
       featured: true
     },
     {
@@ -63,7 +63,7 @@ const Landing = () => {
       description: "Knowledge graph system powered by GPT and LangGraph, automating company mapping, research triggers, and live news monitoring. Integrates multiple data sources for comprehensive business intelligence.",
       image: "public/images/projects/CompanyMapper.png",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      demoUrl: "public/videos/demos/CompanyMapper.mov",
       featured: true
     },
     {
@@ -83,7 +83,7 @@ const Landing = () => {
       description: "Java Swing desktop application for retail stores with calendar scheduling, inventory tracking, and employee shift management. Built with a native desktop experience for offline functionality.",
       image: "public/images/projects/StoreCalendar.png",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      demoUrl: "public/videos/demos/StoreCalendar.mov",
       featured: false
     },
     {
