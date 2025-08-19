@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import VideoModal from '../components/common/VideoModal'
 import '../styles/components/Landing.css'
 
 const Landing = () => {
+  // Video modal state
+  const [videoModal, setVideoModal] = useState({
+    isOpen: false,
+    videoSrc: '',
+    title: ''
+  })
+
+  // Function to open video modal
+  const openVideoModal = (videoSrc, title) => {
+    setVideoModal({
+      isOpen: true,
+      videoSrc,
+      title
+    })
+  }
+
+  // Function to close video modal
+  const closeVideoModal = () => {
+    setVideoModal({
+      isOpen: false,
+      videoSrc: '',
+      title: ''
+    })
+  }
   // Social links data
   const socialLinks = [
     {
@@ -168,15 +193,13 @@ const Landing = () => {
                       <span className="link-icon">⚡</span>
                       GitHub
                     </a>
-                    <a 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openVideoModal(project.videoSrc, project.name)}
                       className="project-link demo-link"
                     >
-                      <span className="link-icon">🔗</span>
+                      <span className="link-icon">🎥</span>
                       Demo
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -184,6 +207,14 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={videoModal.isOpen}
+        onClose={closeVideoModal}
+        videoSrc={videoModal.videoSrc}
+        title={videoModal.title}
+      />
     </div>
   )
 }

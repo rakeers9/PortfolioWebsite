@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import VideoModal from '../components/common/VideoModal'
 import '../styles/components/Projects.css'
 
 const Projects = () => {
+  // Video modal state
+  const [videoModal, setVideoModal] = useState({
+    isOpen: false,
+    videoSrc: '',
+    title: ''
+  })
+
+  // Function to open video modal
+  const openVideoModal = (videoSrc, title) => {
+    setVideoModal({
+      isOpen: true,
+      videoSrc,
+      title
+    })
+  }
+
+  // Function to close video modal
+  const closeVideoModal = () => {
+    setVideoModal({
+      isOpen: false,
+      videoSrc: '',
+      title: ''
+    })
+  }
   // All project data with updated descriptions
   const projects = [
     {
@@ -11,7 +36,7 @@ const Projects = () => {
       description: "A full-stack fitness platform with live coach–client data sync, AI-powered workout generation, and mobile-first design. Users can track workouts, sync with coaches in real-time, and receive AI-generated fitness plans.",
       image: "public/images/projects/FitnessApp.png",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "/videos/demos/FitnessApp.mov",
+      demoUrl: "videos/demos/FitnessApp.mov",
       featured: true
     },
     {
@@ -129,15 +154,13 @@ const Projects = () => {
                       <span className="link-icon">⚡</span>
                       GitHub
                     </a>
-                    <a 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openVideoModal(project.videoSrc, project.name)}
                       className="project-link demo-link"
                     >
-                      <span className="link-icon">🔗</span>
+                      <span className="link-icon">🎥</span>
                       Demo
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -181,15 +204,13 @@ const Projects = () => {
                       <span className="link-icon">⚡</span>
                       GitHub
                     </a>
-                    <a 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openVideoModal(project.videoSrc, project.name)}
                       className="project-link demo-link"
                     >
-                      <span className="link-icon">🔗</span>
+                      <span className="link-icon">🎥</span>
                       Demo
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -197,6 +218,14 @@ const Projects = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={videoModal.isOpen}
+        onClose={closeVideoModal}
+        videoSrc={videoModal.videoSrc}
+        title={videoModal.title}
+      />
     </div>
   )
 }
