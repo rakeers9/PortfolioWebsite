@@ -215,3 +215,113 @@
     transform: scale(1);
   }
 }
+
+/* YouTube Embed Styles */
+.youtube-embed {
+  border-radius: var(--border-radius-sm);
+  width: 100%;
+  height: 400px;
+  background: var(--color-input-bg);
+}
+
+/* External Link Container */
+.external-link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.external-link-container p {
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.external-demo-button {
+  background: var(--color-accent-blue);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--border-radius);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+.external-demo-button:hover {
+  background: var(--color-accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3);
+}
+
+.external-demo-button .link-icon {
+  font-size: 1.2em;
+}
+
+.external-hint {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  word-break: break-all;
+  margin-top: var(--space-md);
+}
+
+.external-hint code {
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Video type hint in footer */
+.video-type-hint {
+  font-size: var(--text-tiny);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+.video-type-hint a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+.video-type-hint a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for YouTube embeds */
+@media (max-width: 768px) {
+  .youtube-embed {
+    height: 250px;
+  }
+  
+  .external-demo-button {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--text-small);
+  }
+}
+
+@media (max-width: 480px) {
+  .youtube-embed {
+    height: 200px;
+  }
+  
+  .external-link-container {
+    padding: var(--space-md);
+    min-height: 250px;
+  }
+  
+  .external-demo-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

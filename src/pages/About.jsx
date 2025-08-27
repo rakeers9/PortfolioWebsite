@@ -11,7 +11,7 @@ const About = () => {
             {/* Left - Profile Image */}
             <div className="profile-image">
               <img 
-                src="https://via.placeholder.com/350x450/CCCCCC/666666?text=Profile+Photo" 
+                src="public/images/profile/37CA8674-0553-40D7-B2CD-84C9CC54705F_1_201_a.jpeg" 
                 alt="Profile photo"
               />
             </div>

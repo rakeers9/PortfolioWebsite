@@ -27,16 +27,17 @@ const Projects = () => {
       title: ''
     })
   }
-  // All project data with updated descriptions
+
+  // All project data with corrected paths (fixed: removed "public/" prefix)
   const projects = [
     {
       id: 1,
       name: "FL Fitness App",
       techStack: ["React Native", "TypeScript", "Expo", "Supabase"],
       description: "A full-stack fitness platform with live coach–client data sync, AI-powered workout generation, and mobile-first design. Users can track workouts, sync with coaches in real-time, and receive AI-generated fitness plans.",
-      image: "public/images/projects/FitnessApp.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "videos/demos/FitnessApp.mov",
+      image: "/images/projects/FitnessApp.png",
+      githubUrl: "https://github.com/rakeers9/FitnessApp",
+      demoUrl: "https://www.youtube.com/watch?v=RzXlrOYaaY4", // YouTube URL
       featured: true
     },
     {
@@ -44,9 +45,9 @@ const Projects = () => {
       name: "Summit",
       techStack: ["Flutter", "MongoDB", "Javascript", "Python"],
       description: "A gamified data-labeling app where users earn rewards while training ML models, with a company-facing web portal. Features include point systems, leaderboards, and data quality metrics for enterprise clients.",
-      image: "public/images/projects/Summit.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      image: "/images/projects/Summit.png",
+      githubUrl: "https://github.com/rakeers9/summit",
+      demoUrl: null,
       featured: true
     },
     {
@@ -54,9 +55,9 @@ const Projects = () => {
       name: "AI Football Analyzer",
       techStack: ["Python", "YOLO"],
       description: "Computer vision system that detects players, tracks ball movement, and analyzes possession stats from football game clips. Uses advanced object detection and tracking algorithms for sports analytics.",
-      image: "public/images/projects/FootballAnalyzer.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "public/videos/demos/FootballAnalyzer.mov",
+      image: "/images/projects/FootballAnalyzer.png",
+      githubUrl: "https://github.com/rakeers9/Football-Vision-Analyzer",
+      demoUrl: "https://www.youtube.com/watch?v=JSckyXgpKNA", // YouTube URL
       featured: true
     },
     {
@@ -64,9 +65,9 @@ const Projects = () => {
       name: "AI Company Mapper",
       techStack: ["Python", "GPT-4", "LangGraph", "NetworkX", "Streamlit"],
       description: "Knowledge graph system powered by GPT and LangGraph, automating company mapping, research triggers, and live news monitoring. Integrates multiple data sources for comprehensive business intelligence.",
-      image: "public/images/projects/CompanyMapper.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "public/videos/demos/CompanyMapper.mov",
+      image: "/images/projects/CompanyMapper.png",
+      githubUrl: "https://github.com/rakeers9/CompanyMapper",
+      demoUrl: "https://www.youtube.com/watch?v=lSxcNqQaExw", // YouTube URL
       featured: true
     },
     {
@@ -74,9 +75,9 @@ const Projects = () => {
       name: "NFL Predictive Player Props",
       techStack: ["Python", "Decision Trees"],
       description: "Built with BoilerQuant: an Elo-based predictive analytics framework using decision trees and Monte Carlo simulations to forecast NFL player performance. Provides accurate predictions for fantasy football and sports analytics.",
-      image: "public/images/projects/PredictivePlayerProps.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      image: "/images/projects/PredictivePlayerProps.png",
+      githubUrl: "https://github.com/REKTASAUROUS/Predictive-Player-Props",
+      demoUrl: null,
       featured: false
     },
     {
@@ -84,9 +85,9 @@ const Projects = () => {
       name: "Java Store Calendar Application",
       techStack: ["Java"],
       description: "Java Swing desktop application for retail stores with calendar scheduling, inventory tracking, and employee shift management. Built with a native desktop experience for offline functionality.",
-      image: "public/images/projects/StoreCalendar.png",
-      githubUrl: "https://github.com/rakeers9",
-      demoUrl: "public/videos/demos/StoreCalendar.mov",
+      image: "/images/projects/StoreCalendar.png",
+      githubUrl: "https://github.com/rakeers9/Store_Calendar_Application",
+      demoUrl: "https://www.youtube.com/watch?v=XliBL-QISMc", // YouTube URL
       featured: false
     },
     {
@@ -96,11 +97,10 @@ const Projects = () => {
       description: "A basic compiler implementation that translates C-like source code into assembly language with lexical and syntax analysis. Educational project demonstrating compiler design principles and language processing.",
       image: "https://via.placeholder.com/500x300/F8F8F8/CCCCCC?text=C+Compiler",
       githubUrl: "https://github.com/rakeers9",
-      demoUrl: "https://github.com/rakeers9",
+      demoUrl: null,
       featured: false
     }
   ]
-
 
   const featuredProjects = projects.filter(project => project.featured)
   const otherProjects = projects.filter(project => !project.featured)
@@ -154,13 +154,25 @@ const Projects = () => {
                       <span className="link-icon">⚡</span>
                       GitHub
                     </a>
-                    <button
-                      onClick={() => openVideoModal(project.videoSrc, project.name)}
-                      className="project-link demo-link"
-                    >
-                      <span className="link-icon">🎥</span>
-                      Demo
-                    </button>
+                    {project.demoUrl ? (
+                      <button
+                        onClick={() => openVideoModal(project.demoUrl, project.name)}
+                        className="project-link demo-link"
+                      >
+                        <span className="link-icon">🎥</span>
+                        Demo
+                      </button>
+                    ) : (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link demo-link"
+                      >
+                        <span className="link-icon">🔗</span>
+                        View Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -204,13 +216,25 @@ const Projects = () => {
                       <span className="link-icon">⚡</span>
                       GitHub
                     </a>
-                    <button
-                      onClick={() => openVideoModal(project.videoSrc, project.name)}
-                      className="project-link demo-link"
-                    >
-                      <span className="link-icon">🎥</span>
-                      Demo
-                    </button>
+                    {project.demoUrl ? (
+                      <button
+                        onClick={() => openVideoModal(project.demoUrl, project.name)}
+                        className="project-link demo-link"
+                      >
+                        <span className="link-icon">🎥</span>
+                        Demo
+                      </button>
+                    ) : (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link demo-link"
+                      >
+                        <span className="link-icon">🔗</span>
+                        View Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
